@@ -1,0 +1,14 @@
+def add(a, b):
+    return a + b
+
+def divide(a, b):
+    return a / b  # No check for division by zero!
+
+def calculate(operation, x, y):
+    if operation == "add":
+        return add(x, y)
+    elif operation == "divide":
+        return divide(x, y)
+    # Missing else case, no error handling
+    
+# No docstrings, no type hints
