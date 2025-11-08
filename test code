@@ -1,0 +1,50 @@
+import os
+
+# Hardcoded credentials (security issue!)
+API_KEY = "sk-1234567890abcdef"
+DATABASE_PASSWORD = "admin123"
+
+def get_user_data(user_id):
+    # SQL injection vulnerability!
+    query = "SELECT * FROM users WHERE id = " + user_id
+    return query
+
+def divide_numbers(a, b):
+    # No error handling for division by zero!
+    return a / b
+
+def process_file(filename):
+    # Potential path traversal vulnerability
+    with open("/data/" + filename) as f:
+        return f.read()
+
+# Using eval() - dangerous!
+def calculate(expression):
+    return eval(expression)
+```
+
+5. **At the bottom:**
+   - Select: **"Create a new branch for this commit and start a pull request"**
+   - Branch name: `add-security-issues`
+
+6. **Click "Propose new file"**
+
+7. **Click "Create pull request"**
+
+---
+
+## 📊 **Watch the Magic Happen!**
+
+**Terminal 3 (Ngrok):** Watch for incoming requests
+
+**Terminal 1 (Backend):** You should see:
+```
+📥 Webhook received from GitHub
+✅ Webhook signature verified
+📋 PR Data: {...}
+🔍 Processing PR #X - Action: opened
+📄 Fetched diff: ...
+🤖 Starting AI code review...
+✅ AI review completed
+💬 Created X inline comments
+✅ Review posted to GitHub successfully!
